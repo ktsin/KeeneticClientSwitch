@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localVm="clr-namespace:KeeneticClientSwitch.Client.ViewModels"
+             x:Class="KeeneticClientSwitch.Client.LoginPage"
+             x:DataType="localVm:LoginPageViewModel"
+             Title="Login">
+    <Grid Padding="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Text="Host:" />
+        <Entry Grid.Row="0" Grid.Column="1" Placeholder="192.168.10.1" HorizontalOptions="FillAndExpand"
+               Text="{Binding Host}" />
+        <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Text="Login:" />
+        <Entry Grid.Row="1" Grid.Column="1" Placeholder="admin" HorizontalOptions="FillAndExpand"
+               Text="{Binding Login}" />
+        <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Center" Text="Password:" />
+        <Entry Grid.Row="2" Grid.Column="1" Placeholder="password" IsPassword="True" HorizontalOptions="FillAndExpand"
+               Text="{Binding Password}" />
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Text="Login" IsEnabled="True"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type localVm:LoginPageViewModel}}, Path=LogIntoServiceCommand}" />
+
+    </Grid>
+    <!-- </Frame> -->
+
+</ContentPage>

@@ -1,0 +1,1 @@
+dotnet ef migrations add --project .\KeeneticClientSwitch.Shared\KeeneticClientSwitch.Data.csproj --startup-project .\KeeneticClientSwitch.MigrationCreator\KeeneticClientSwitch.MigrationCreator.csproj --context KeeneticClientSwitch.Data.Services.Persistence.LocalContext ChangeIdType

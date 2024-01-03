@@ -1,24 +1,15 @@
-﻿namespace KeeneticClientSwitch.Client;
+﻿using KeeneticClientSwitch.Client.ViewModels;
+
+namespace KeeneticClientSwitch.Client;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    MainPageViewModel _viewModel;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
-
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+    public MainPage(MainPageViewModel viewModel)
+    {
+        InitializeComponent();
+        _viewModel = viewModel;
+        BindingContext = _viewModel;
+    }
 }
-
